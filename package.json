@@ -4,7 +4,12 @@
   "description": "Altostra Hello World template",
   "main": "index.js",
   "scripts": {
-    "build": "alto build"
+    "build": "alto build",
+    "local-func:get-message": "alto local run 'RunMe01' --data tests/get-message.json",
+    "local-func:set-name": "alto local run 'RunMe01' --data tests/set-name.json",
+    "start-api": "npm run build && sam local start-api -t sam-template.json",
+    "local-api:get-message": "curl http://localhost:3000/welcome-message",
+    "local-api:set-name": "curl --data \"Developer\" http://localhost:3000/my-name"
   },
   "keywords": [],
   "author": "Altostra, Inc.",
