@@ -1,15 +1,11 @@
 # Hello World Template - Node.js
 
-# OPEN ISSUES
-* consider screenshots of postman
-* gifs
-
----
-
 # Welcome to Altostra
 We have created this Hello World project for you to get the feel for our platform and to get you started with the next-gen of cloud development.
 
 Follow the instructions below to get started.
+
+Visit us at [www.altostra.com](https://www.altostra.com)
 
 Happy Clouding!
 
