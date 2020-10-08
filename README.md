@@ -6,13 +6,11 @@
 ---
 
 # Welcome to Altostra
-We have created this Hello World project for you to get the feel for our platform and to get you started on your next level cloud jorney.
+We have created this Hello World project for you to get the feel for our platform and to get you started with the next-gen of cloud development.
 
 Follow the instructions below to get started.
 
 Happy Clouding!
-
-<br>
 
 # Before you begin
 Before you dive into creating cool applications with Altostra, we need to set you up first. Follow these steps:
@@ -48,12 +46,8 @@ Many of the Altostra CLI commands require authentication before you can use them
 alto login
 ```
 
-<br>
-
 # Open the project
 Open the project directory in Visual Studio Code, the Altostra Designer will load automatically.
-
-<br>
 
 # Test locally
 
