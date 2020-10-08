@@ -1,0 +1,12 @@
+{
+  "name": "altostra-template-hello-world",
+  "version": "1.0.0",
+  "description": "Altostra Hello World template",
+  "main": "index.js",
+  "scripts": {
+    "build": "alto build"
+  },
+  "keywords": [],
+  "author": "Altostra, Inc.",
+  "license": "See LICENSE"
+}
