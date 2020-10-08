@@ -1,7 +1,7 @@
 {
 	"id": "altostra-template-hello-worl-w500524",
 	"name": "altostra-template-hello-world-nodejs",
-	"description": "An empty project template",
+	"description": "Altostra Hello World project template",
 	"created": "2020-10-08T10:32:10.754Z",
 	"blueprints": [
 		{

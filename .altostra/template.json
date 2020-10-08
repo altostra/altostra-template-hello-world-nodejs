@@ -1,0 +1,17 @@
+{
+  "id": "altostra-template-hello-world-nodejs",
+  "name": "altostra-template-hello-world-nodejs",
+  "description": "Altostra Hello World project template",
+  "created": "2020-10-08T22:15:22Z",
+  "includes": [
+    "/functions/**",
+    "/tests/**",
+    "/package*.json",
+    "/.altoignore",
+    "/.gitignore",
+    "/README.md",
+    "/LICENSE"
+  ],
+  "excludes": [],
+  "blueprints": []
+}
