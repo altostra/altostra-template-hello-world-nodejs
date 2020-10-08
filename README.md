@@ -120,8 +120,6 @@ Click on the deployment name `hello` in the list to open the deplyment profile p
 
 Under "Deployments History" you should see a single entry with the details of your deployment and the current status.
 
-[[GIF]]
-
 Click on the action link on the right side of the history entry to download the infrastructure configuration files and function code files.
 
 # Deploy to the cloud
@@ -165,7 +163,5 @@ alto console
 Click on the deployment name `prod` in the list to open the deplyment profile page.  
 
 Under "Deployments History" you should see a single entry with the details of your deployment and the current status. The deployment might take a while to complete.
-
-[[GIF]]
 
 Click on the action link on the right side of the history entry to open the cloud provider's console where you can see the deployed resources and their details.
