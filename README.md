@@ -2,6 +2,7 @@
 
 # OPEN ISSUES
 * consider screenshots of postman
+* gifs
 
 ---
 
@@ -50,7 +51,7 @@ alto login
 Open the project directory in Visual Studio Code, the Altostra Designer will load automatically.
 
 # Test locally
-You can run the project locally to try it out and play around with the code. It's a good way to debug, test and quickly iterate during development—make sure to properly test your projects in the cloud.
+You can run the project locally to try it out and play around with the code. It's a good way to debug, test and quickly iterate during development—make sure to also properly test your projects in the cloud.
 
 ## Prerequisites
 To run the project locally, you will need few tools installed:
@@ -68,8 +69,10 @@ alto build
 sam local start-api -t sam-template.json
 ```
 
+> If you change the project design, re-run these commands.
+
 ## Get the message
-Run the following command to get the welcoming message:
+Run the following command to get the welcome message:
 ```sh
 curl http://localhost:3000/welcome-message 
 ```
@@ -140,6 +143,20 @@ alto push v1.0
 # deploy the image "v1.0" to a new deployment in the "Production" environment
 alto deploy prod:v1.0 --new Production
 ```
+
+## Update
+If you decide to change the design or the code of the project, you will need to upload a new version.
+
+To do that, push a new image and [update the deployment](https://docs.altostra.com/howto/projects/deploy-project.html#update-an-existing-deployment):
+```sh
+# create a new image of the project called "v1.1"
+alto push v1.1
+
+# update the existing "prod" deployment with the new "v1.1" image
+alto deploy prod:v1.1
+```
+
+> You don't need to specify the `--new` option and the environment name when you update deployments.
 
 ## Explore the deployment details
 You can now open the Altostra Web Console to browse your project and its deployments:
