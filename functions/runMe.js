@@ -1,12 +1,13 @@
 const aws = require('aws-sdk')
 const message = `
 
-Welcome to Altostra - the no-code infrastructure platform for developers.
+Welcome to Altostra.
 
-This is an example response from the API.
-To make it more personal, call the POST /my-name endpoint with your name, like this:
+To set your name, send a request to POST /my-name with your name as the body.
 
-curl ...???
+See the README file for more detailed instructions on how to run this project locally and how to deploy it.
+
+Happy Clouding!
 `
 const region = process.env.AWS_REGION
 const isLocal = process.env.AWS_SAM_LOCAL
@@ -31,7 +32,7 @@ module.exports.handler = async (event, context) => {
 
     case 'POST':
       try {
-        setName(event.body)
+        await setName(event.body)
         return {
           statusCode: 204,
         }
@@ -82,7 +83,7 @@ async function setName(name) {
   }
 
   try {
-    if (typeof name !== 'string' || name.length < 1) {
+    if (typeof name !== 'string') {
       throw new Error(`Provided name is invalid.`)
     }
 
