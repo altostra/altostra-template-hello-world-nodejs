@@ -1,0 +1,128 @@
+{
+	"id": "altostra-template-hello-worl-w500524",
+	"name": "altostra-template-hello-world-nodejs",
+	"description": "An empty project template",
+	"created": "2020-10-08T10:32:10.754Z",
+	"blueprints": [
+		{
+			"version": "2019-10-24",
+			"connections": {
+				"ApiEndpoint02": {
+					"RunMe01": {
+						"type": "connection.trigger",
+						"from": "ApiEndpoint02",
+						"to": "RunMe01"
+					}
+				},
+				"ApiEndpoint01": {
+					"RunMe01": {
+						"type": "connection.trigger",
+						"from": "ApiEndpoint01",
+						"to": "RunMe01"
+					}
+				},
+				"RunMe01": {
+					"QueryMe01": {
+						"type": "connection.resource-access",
+						"accessLevel": "read-write",
+						"from": "RunMe01",
+						"to": "QueryMe01"
+					}
+				}
+			},
+			"resources": {
+				"CallMe02": {
+					"type": "resource.api",
+					"name": "call-me",
+					"cors": {
+						"type": "api.cors.simple",
+						"origins": "*"
+					},
+					"endpoints": [
+						{
+							"type": "ref",
+							"id": "ApiEndpoint01"
+						},
+						{
+							"type": "ref",
+							"id": "ApiEndpoint02"
+						}
+					],
+					"id": "CallMe02"
+				},
+				"RunMe01": {
+					"type": "resource.compute.function",
+					"name": "run-me",
+					"entryPoint": "functions/runMe.handler",
+					"memory": 512,
+					"runtime": "nodejs12.x",
+					"timeout": 6,
+					"id": "RunMe01",
+					"layers": []
+				},
+				"QueryMe01": {
+					"type": "resource.table",
+					"name": "query-me",
+					"tableName": "query-me",
+					"key": {
+						"hash": {
+							"type": "STRING",
+							"name": "pk"
+						}
+					},
+					"aws": {
+						"billingModel": "PAY_PER_REQUEST"
+					},
+					"id": "QueryMe01"
+				},
+				"ApiEndpoint01": {
+					"type": "resource.api.endpoint",
+					"name": "api-endpoint-0",
+					"method": "GET",
+					"path": "/welcome-message",
+					"api": {
+						"type": "ref",
+						"id": "CallMe02"
+					},
+					"id": "ApiEndpoint01"
+				},
+				"ApiEndpoint02": {
+					"type": "resource.api.endpoint",
+					"name": "api-endpoint-0",
+					"method": "POST",
+					"path": "/my-name",
+					"api": {
+						"type": "ref",
+						"id": "CallMe02"
+					},
+					"id": "ApiEndpoint02"
+				}
+			},
+			"metadata": {
+				"designer": {
+					"resourcePositions": {
+						"CallMe02": {
+							"x": 292,
+							"y": 350,
+							"z": 0
+						},
+						"RunMe01": {
+							"x": 632,
+							"y": 395,
+							"z": 0
+						},
+						"QueryMe01": {
+							"x": 911,
+							"y": 396,
+							"z": 0
+						}
+					}
+				}
+			},
+			"id": "ckg0olvk10000mdmpeb4s045g",
+			"name": "altostra-template-hello-world-nodejs",
+			"unsafe": false
+		}
+	],
+	"type": "altostra"
+}

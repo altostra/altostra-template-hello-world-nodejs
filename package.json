@@ -8,5 +8,9 @@
   },
   "keywords": [],
   "author": "Altostra, Inc.",
-  "license": "See LICENSE"
+  "license": "See LICENSE",
+  "devDependencies": {
+    "@types/node": "^12.12.64",
+    "aws-sdk": "^2.769.0"
+  }
 }
