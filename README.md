@@ -22,7 +22,7 @@ Install it from NPM (make sure you have [Node.js](https://nodejs.org/en/) instal
 
 ```sh
 # make sure you have Node.js 10 or above installed
-npm i -g @altostra/cli
+$ npm i -g @altostra/cli
 ```
 
 ## 3. Install Altostra Tools for Visual Studio Code
@@ -30,7 +30,7 @@ Altostra Tools for Visual Studio Code integrates Altostra's visual designer and 
 
 Install it from the terminal:
 ```sh
-code --install-extension Altostra.altostra
+$ code --install-extension Altostra.altostra
 ```
 
 or, search for `Altostra Tools` in the Visual Studio Code extensions view.
@@ -41,7 +41,7 @@ or, directly from the [marketplace](https://marketplace.visualstudio.com/items?i
 Run the following command to login:
 
 ```sh
-alto login
+$ alto login
 ```
 
 Many of the commands below require you to login first.
@@ -61,10 +61,10 @@ Create an [image](https://docs.altostra.com/reference/concepts/project-image.htm
 
 ```sh
 # create a new image "v1.0" for the project
-alto push v1.0
+$ alto push v1.0
 
 # deploy the image "v1.0" to a new deployment in the "Production" environment
-alto deploy prod:v1.0 --new Production
+$ alto deploy prod:v1.0 --new Production
 ```
 
 ## Explore the deployment details
@@ -72,7 +72,7 @@ You can now open the Altostra Web Console to browse your project and its deploym
 
 ```sh
 # open the current project in the Altostra Web Console 
-alto console
+$ alto console
 ```
 
 **Click** on the deployment name `prod` in the list to open the deplyment profile page.  
@@ -87,10 +87,10 @@ If you decide to change the design or the code of the project, you will need to 
 To do that, push a new image and [update the deployment](https://docs.altostra.com/howto/projects/deploy-project.html#update-an-existing-deployment):
 ```sh
 # create a new image "v1.1" for the project
-alto push v1.1
+$ alto push v1.1
 
 # update the existing "prod" deployment with the new "v1.1" image
-alto deploy prod:v1.1
+$ alto deploy prod:v1.1
 ```
 
 > You don't need to specify the `--new` option and the environment name when you update deployments.
@@ -108,10 +108,10 @@ To run the project locally, make sure you have these tools installed:
 To start a local instance of the API, run:
 ```sh
 # builds the project and saves the resulting SAM template to a file
-alto build
+$ alto build
 
 # start an instance of API Gateway on the localhost
-sam local start-api -t sam-template.json
+$ sam local start-api -t sam-template.json
 ```
 
 > If you change the project design, re-run these commands.
@@ -119,13 +119,13 @@ sam local start-api -t sam-template.json
 ## Get the message
 Run the following command to get the welcome message:
 ```sh
-curl http://localhost:3000/welcome-message 
+$ curl http://localhost:3000/welcome-message 
 ```
 
 ## Set your name
 Run the following command to set your name:
 ```sh
-curl --data "Your Name Here" http://localhost:3000/my-name
+$ curl --data "Your Name Here" http://localhost:3000/my-name
 ```
 
 Now run the previous command to get the message again, it should now be personalized 👋🏻
