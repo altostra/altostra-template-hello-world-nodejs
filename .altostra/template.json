@@ -1,4 +1,5 @@
 {
+  "type": "altostra",
   "id": "altostra-template-hello-world-nodejs",
   "name": "altostra-template-hello-world-nodejs",
   "description": "Altostra Hello World project template",
